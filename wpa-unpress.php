@@ -39,13 +39,16 @@ function wpa_unpress_cleanup_query_string( $src ){
 
 }
 
+
 add_filter( 'login_errors', 'wpa_unpress_prevent_login_error' );
 function wpa_unpress_prevent_login_error(){
   return 'Huh?';
 }
 
-add_action( 'wp_enqueue_scripts', 'wpa_unpress_remove_block_library_css' );
-function wpa_unpress_remove_block_library_css(){
+
+add_action( 'wp_enqueue_scripts', 'wpa_unpress_cleanup_scripts_styles' );
+function wpa_unpress_cleanup_scripts_styles(){
   wp_dequeue_style( 'wp-block-library' );
+	wp_deregister_script( 'wp-embed' );
 }
 
