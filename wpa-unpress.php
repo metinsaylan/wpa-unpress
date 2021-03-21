@@ -3,7 +3,7 @@
 * Plugin Name: WPA Unpress
 * Plugin URI: https://wpassist.me/plugins/wpa-unpress/
 * Description: Clears all WordPress default head items.
-* Version: 1.1
+* Version: 1.2
 * Author: Metin Saylan
 * Author URI: https://metinsaylan.com/
 */
