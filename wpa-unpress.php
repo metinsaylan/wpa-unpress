@@ -52,3 +52,9 @@ function wpa_unpress_cleanup_scripts_styles(){
 	wp_deregister_script( 'wp-embed' );
 }
 
+// Remove Global Styles and SVG Filters from WP 5.9.1 - 2022-02-27
+add_action('init', 'remove_global_styles_and_svg_filters');
+function remove_global_styles_and_svg_filters() {
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+}
